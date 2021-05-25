@@ -1,0 +1,29 @@
+spring:
+  datasource-write:
+    driver-class-name: org.postgresql.Driver
+    jdbc-url: jdbc:postgresql://localhost:5432/housing_migration_test
+    username: 'postgres'
+    password: 'admin'
+    platform: postgresql
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      pool-name: WriteHikariPool
+
+
+  datasource-read:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/housing?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: 'root'
+    password: 'admin'
+    platform: mysql
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      pool-name: ReadHikariPool
+
+
+
+
